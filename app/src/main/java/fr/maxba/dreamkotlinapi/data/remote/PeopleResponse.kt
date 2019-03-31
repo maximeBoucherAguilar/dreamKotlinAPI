@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class PeopleResponse(
 
+    @SerializedName("id") //pas d id pour la récupération des personnages dans l'api
+    val id: Int,
+
     @SerializedName("name")
     val name: String,
 

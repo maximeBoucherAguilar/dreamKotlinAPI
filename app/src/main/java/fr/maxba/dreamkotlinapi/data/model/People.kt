@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "people")
 data class People(
 
+    //pas d id pour la récupération des personnages dans l'api, le recycler view n'affiche du coup que le dernier personnage (celui avec l 'id 0)
     @PrimaryKey
     override var id: Int = 0,
 

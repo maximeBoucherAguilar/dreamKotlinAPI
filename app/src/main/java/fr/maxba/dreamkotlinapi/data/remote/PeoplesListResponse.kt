@@ -2,7 +2,7 @@ package fr.maxba.dreamkotlinapi.data.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class PeoplesListResponse ( //TODO modif
+data class PeoplesListResponse (
 
     @SerializedName("count")
     val count: Int,

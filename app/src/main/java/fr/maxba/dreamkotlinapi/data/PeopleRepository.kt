@@ -16,7 +16,7 @@ import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 import java.util.*
 
-class PeopleRepository: KoinComponent { //TODO modif
+class PeopleRepository: KoinComponent {
 
     private val peopleDao: PeopleDao by inject()
 
@@ -57,6 +57,7 @@ class PeopleRepository: KoinComponent { //TODO modif
         service.getTopRatedPeoples()
             .subscribeOn(Schedulers.io())
             .flatMap { peoplesListResponse -> Observable.fromIterable(peoplesListResponse.results) }
+            .flatMap { peopleShortResponse -> service.getPeople(peopleShortResponse.id) }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onNext = { peopleFullResponse -> insert(peopleResponseToPeople(peopleFullResponse)) },
@@ -67,6 +68,7 @@ class PeopleRepository: KoinComponent { //TODO modif
 
     private fun peopleResponseToPeople(peopleResponse: PeopleResponse): People =
         People(
+            id = peopleResponse.id,
             name = peopleResponse.name,
             birth_year = peopleResponse.birth_year,
             eye_color = peopleResponse.eye_color,
