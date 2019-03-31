@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">DreamKotlinAPI</string>
+    <string name="app_name">Peoples</string>
+
+    <string name="peoples">Peoples</string>
+    <string name="confirm">Confirmer</string>
+    <string name="create_people">Créer un personnage</string>
+    <string name="title">Titre</string>
+    <string name="birth_year">Année de naissance</string>
+    <string name="eye_color">Couleur des yeux</string>
+    <string name="gender">Genre</string>
+    <string name="name">Nom</string>
+    <string name="delete_people_warning">Voulez-vous vraiment supprimer le personnage %1$s?</string>
+    <string name="peoples_loading_error">Désolé, une erreur a empêché la récupération des personnages.</string>
+    <string name="peoples_loaded">Les personnages ont bien été récupérés.</string>
+
+
 </resources>
